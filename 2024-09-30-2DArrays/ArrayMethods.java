@@ -1,5 +1,6 @@
 //1. Amy Zhou [azhou60@stuy.edu] & Jeffery Zhang [jzhang60@stuy.edu]
 
+import java.util.*;
 public class ArrayMethods {
   public static void main (String[] args) {
     System.out.println("arr2DSum Tests: "); 
@@ -18,7 +19,7 @@ public class ArrayMethods {
     System.out.println(" ");
     System.out.println("arrToString[][] Tests: ");
     int[][] arr1 = new int[][] {{1,2,3,4,5,6}, {5,30}, {0, -11, 44}};
-    System.out.println(arrToString(arr1));
+    System.out.println(arrToStringTest(arr1));
   }
  
 //2. Copy your arrToString method from before.
@@ -58,6 +59,15 @@ public class ArrayMethods {
     }
     result += "]";
     return result;
+  }
+
+  public static String arrToStringTest(int[][]ary) {
+    if (arrToString(ary).equals(Arrays.deepToString(ary))) {
+      return "Pass";
+    } else {
+      return "Failed, expected " + Arrays.deepToString(ary) + " but recieved " + 
+arrToString(ary);
+    }
   }
   
   /*Return the sum of all of the values in the 2D array */
