@@ -1,8 +1,11 @@
 public class MyArrays {
         public static void main (String[] args) {
 		System.out.println("returnCopy test:");
-		int[] tester = new int[] {1,2,3,4,5};
-        	System.out.println("Test 01: " + returnCopyTest(tester));
+		int[] copyTester = new int[] {1,2,3,4,5};
+        	System.out.println("Test 01: " + returnCopyTest(copyTester));
+		int[] concatTester1 = new int[] {100,99,988};
+		int[] concatTester2 = new int[] {101,98,223,222};
+		System.out.println("Test 01: " + concatArrayTest(concatTester1, concatTester2, 0));
 	}
 
         public static String arrayToString(int[] arr) {
@@ -46,6 +49,18 @@ public class MyArrays {
       			result[i+ary1.length] = ary2[i];
     		}
     		return result;
+        }
+	public static String concatArrayTest (int[]ary1, int[]ary2, int n) {
+		String[] results = new String[] {"[100, 99, 988, 101, 98, 223, 222]"};
+		String expected = results[n];
+		String actual = arrayToString(concatArray(ary1,ary2));
+		if (expected.equals(actual)) {
+			return "Pass";
+		}
+		else {
+			return "Failed, expected " + expected + " but value was " + actual;
+		}
 	}
 }
+
 
