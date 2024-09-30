@@ -15,6 +15,10 @@ public class ArrayMethods {
     System.out.println("Test 05: " + arr2DSumTest(arr, 4));
     arr = new int[][] {{}, {}, {}, {}};
     System.out.println("Test 06: " + arr2DSumTest(arr, 5));
+    System.out.println(" ");
+    System.out.println("arrToString[][] Tests: ");
+    int[][] arr1 = new int[][] {{1,2,3,4,5,6}, {5,30}, {0, -11, 44}};
+    System.out.println(arrToString(arr1));
   }
  
 //2. Copy your arrToString method from before.
@@ -45,7 +49,15 @@ public class ArrayMethods {
   */
   public static String arrToString(int[][]ary){
     //this should use arrToString(int[])
-    return "";
+    String result = "[";
+    for (int i = 0; i < ary.length; i ++) {
+      result += arrayToString(ary[i]);
+      if (i < ary.length - 1) {
+	result += ", ";
+      }
+    }
+    result += "]";
+    return result;
   }
   
   /*Return the sum of all of the values in the 2D array */
