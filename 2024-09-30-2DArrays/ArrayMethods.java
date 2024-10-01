@@ -3,12 +3,12 @@
 import java.util.*;
 public class ArrayMethods {
   public static void main (String[] args) {
-    System.out.println("arr2DSum Tests: "); 
+    System.out.println("arr2DSum Tests: ");
     int[][] arr = new int[][] {{2, 7}, {3, 6, 1}, {0, 0, 0, 0}};
     System.out.println("Test 01: " + arr2DSumTest(arr, 0));
     arr = new int[][] {{1,2,3}, {5,6,7}, {4, 2}};
     System.out.println("Test 02: " + arr2DSumTest(arr, 1));
-    arr = new int[][] {{11,12}, {13,14,15}, {0,-1,2,32,-33}};       
+    arr = new int[][] {{11,12}, {13,14,15}, {0,-1,2,32,-33}};
     System.out.println("Test 03: " + arr2DSumTest(arr, 2));
     arr = new int[][] {{11,11,11}, {22,22,22}, {33,33,33}};
     System.out.println("Test 04: " + arr2DSumTest(arr, 3));
@@ -22,15 +22,15 @@ public class ArrayMethods {
     System.out.println("Test 01: " + arrToStringTest(arr1));
     arr1 = new int[][] {{},{},{},{},{}};
     System.out.println("Test 02: " + arrToStringTest(arr1));
-    arr1 = new int[][] {{1,2,5,7}, {-4,6,-99,100}};                                   
+    arr1 = new int[][] {{1,2,5,7}, {-4,6,-99,100}};
     System.out.println("Test 03: " + arrToStringTest(arr1));
-    arr1 = new int[][] {{100,100,100,100,100}, {99,100,99,100,99,100}, {100,98,99,100,99}};  
+    arr1 = new int[][] {{100,100,100,100,100}, {99,100,99,100,99,100}, {100,98,99,100,99}};
     System.out.println("Test 04: " + arrToStringTest(arr1));
-    arr1 = new int[][] {{22,222,2222,222}, {10000,9999, 9888}, {0000, 000, 0}};  
+    arr1 = new int[][] {{22,222,2222,222}, {10000,9999, 9888}, {0000, 000, 0}};
     System.out.println("Test 05: " + arrToStringTest(arr1));
     System.out.println(" ");
     System.out.println("swapRC Tests: ");
-    int[][] arr2 = new int[][] {{1,2,3}, {4,5,6}}; 
+    int[][] arr2 = new int[][] {{1,2,3}, {4,5,6}};
     System.out.println("Test 01: " + swapRCTest(arr2, new int[][] {{1,4}, {2,5}, {3,6}}));
     arr2 = new int[][] {{7,8,9}, {10,11,12}, {13,14,15}};
     System.out.println("Test 02: " + swapRCTest(arr2, new int[][] {{7,10,13}, {8,11,14}, {9,12,15}}));
@@ -41,7 +41,7 @@ public class ArrayMethods {
     arr2 = new int[][] {{10,20,30,40}, {50,60,70,80}};
     System.out.println("Test 05: " + swapRCTest(arr2, new int[][] {{10,50}, {20,60}, {30,70}, {40,80}}));
   }
- 
+
 //2. Copy your arrToString method from before.
 /**Return a String that represets the array in the format:
 * "[2, 3, 4, 9]"
@@ -85,11 +85,11 @@ public class ArrayMethods {
     if (arrToString(ary).equals(Arrays.deepToString(ary))) {
       return "Pass";
     } else {
-      return "Failed, expected " + Arrays.deepToString(ary) + " but recieved " + 
+      return "Failed, expected " + Arrays.deepToString(ary) + " but recieved " +
 arrToString(ary);
     }
   }
-  
+
   /*Return the sum of all of the values in the 2D array */
   public static int arr2DSum(int[][] nums){
   //use a nested loop to solve this
@@ -137,7 +137,36 @@ arrToString(ary);
    }
  }
 
+ //3. Modify a given 2D array of integer as follows:
+//Replace all the negative values:
+//-When the row number is the same as the column number replace
+//that negative with the value 1
+//-All other negatives replace with 0
+  public static void replaceNegative(int[][] vals){
+    for (int i = 0; i < vals.length; i ++) {
+      for (int j = 0; j < vals[i].length; j ++) {
+        if (vals[i][j] < 0) {
+          if (i == j) {
+            vals[i][j] = 1;
+          }
+          else {
+            vals[i][j] = 0;
+          }
+        }
+      }
 
+    }
+
+  }
+
+
+//4. Make a copy of the given 2d array.
+//When testing : make sure that changing the original does NOT change the copy.
+//DO NOT use any built in methods that "copy" an array.
+//You SHOULD write a helper method for this.
+//If you don't see a good way to do that, you should stop and look at prior methods.
+public static int[][] copy(int[][] nums){
+ return null;//placeholder so it compiles
 }
 
-
+}
