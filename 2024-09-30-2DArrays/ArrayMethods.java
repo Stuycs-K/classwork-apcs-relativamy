@@ -28,6 +28,14 @@ public class ArrayMethods {
     System.out.println("Test 04: " + arrToStringTest(arr1));
     arr1 = new int[][] {{22,222,2222,222}, {10000,9999, 9888}, {0000, 000, 0}};  
     System.out.println("Test 05: " + arrToStringTest(arr1));
+    System.out.println(" ");
+    System.out.println("swapRC Tests: ");
+    int[][] arr2 = new int[][] {{1,2,3}, {4,5,6}}; 
+    System.out.println("Test 01: " + swapRCTest(arr2, new int[][] {{1,4}, {2,5}, {3,6}}));
+    arr2 = new int[][] {{7,8,9}, {10,11,12}, {13,14,15}};
+    System.out.println("Test 02: " + swapRCTest(arr2, new int[][] {{7,10,13}, {8,11,14}, {9,12,15}}));
+    arr2 = new int[][] {{1}};
+    System.out.println("Test 03: " + swapRCTest(arr2, new int[][] {{1}}));
   }
  
 //2. Copy your arrToString method from before.
@@ -108,6 +116,17 @@ arrToString(ary);
   public static int[][] swapRC(int[][]nums){
     return new int[1][1];
   }
+
+  public static String swapRCTest(int[][] input, int[][] expected) {
+    int[][] result = swapRC(input);
+    if (Arrays.deepEquals(result,expected)) {
+      return "Pass";
+    }
+    else {
+      return "Failed, expected " + arrToString(expected) + " but recieved " + arrToString(result);
+   }
+ }
+
 
 }
 
