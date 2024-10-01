@@ -19,7 +19,15 @@ public class ArrayMethods {
     System.out.println(" ");
     System.out.println("arrToString[][] Tests: ");
     int[][] arr1 = new int[][] {{1,2,3,4,5,6}, {5,30}, {0, -11, 44}};
-    System.out.println(arrToStringTest(arr1));
+    System.out.println("Test 01: " + arrToStringTest(arr1));
+    arr1 = new int[][] {{},{},{},{},{}};
+    System.out.println("Test 02: " + arrToStringTest(arr1));
+    arr1 = new int[][] {{1,2,5,7}, {-4,6,-99,100}};                                   
+    System.out.println("Test 03: " + arrToStringTest(arr1));
+    arr1 = new int[][] {{100,100,100,100,100}, {99,100,99,100,99,100}, {100,98,99,100,99}};  
+    System.out.println("Test 04: " + arrToStringTest(arr1));
+    arr1 = new int[][] {{22,222,2222,222}, {10000,9999, 9888}, {0000, 000, 0}};  
+    System.out.println("Test 05: " + arrToStringTest(arr1));
   }
  
 //2. Copy your arrToString method from before.
