@@ -36,6 +36,10 @@ public class ArrayMethods {
     System.out.println("Test 02: " + swapRCTest(arr2, new int[][] {{7,10,13}, {8,11,14}, {9,12,15}}));
     arr2 = new int[][] {{1}};
     System.out.println("Test 03: " + swapRCTest(arr2, new int[][] {{1}}));
+    arr2 = new int[][] {{1,2}, {3,4}, {5,6}, {7,8}};
+    System.out.println("Test 04: " + swapRCTest(arr2, new int[][] {{1,3,5,7}, {2,4,6,8}}));
+    arr2 = new int[][] {{10,20,30,40}, {50,60,70,80}};
+    System.out.println("Test 05: " + swapRCTest(arr2, new int[][] {{10,50}, {20,60}, {30,70}, {40,80}}));
   }
  
 //2. Copy your arrToString method from before.
@@ -114,7 +118,13 @@ arrToString(ary);
   * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
   */
   public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
+    int[][] result = new int[nums[0].length][nums.length];
+    for (int j = 0; j < nums[0].length; j ++) {
+      for (int i = 0; i < nums.length; i ++) {
+        result[j][i] = nums[i][j];
+      }
+    }
+   return result;
   }
 
   public static String swapRCTest(int[][] input, int[][] expected) {
