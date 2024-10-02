@@ -40,6 +40,8 @@ public class ArrayMethods {
     System.out.println("Test 04: " + swapRCTest(arr2, new int[][] {{1,3,5,7}, {2,4,6,8}}));
     arr2 = new int[][] {{10,20,30,40}, {50,60,70,80}};
     System.out.println("Test 05: " + swapRCTest(arr2, new int[][] {{10,50}, {20,60}, {30,70}, {40,80}}));
+    System.out.println(arrToString(copy(new int[][] {{1,2,3}, {3,4,5}, {5,6,7}, 
+{44}})));
   }
 
 //2. Copy your arrToString method from before.
@@ -48,7 +50,7 @@ public class ArrayMethods {
 * Note the comma+space between values, and between values
 */
 
-  public static String arrayToString(int[] arr) {
+  public static String arrToString(int[] arr) {
   String result = "[";
   for (int i = 0; i < arr.length; i ++) {
     result += arr[i];
@@ -72,7 +74,7 @@ public class ArrayMethods {
     //this should use arrToString(int[])
     String result = "[";
     for (int i = 0; i < ary.length; i ++) {
-      result += arrayToString(ary[i]);
+      result += arrToString(ary[i]);
       if (i < ary.length - 1) {
 	result += ", ";
       }
@@ -165,8 +167,29 @@ arrToString(ary);
 //DO NOT use any built in methods that "copy" an array.
 //You SHOULD write a helper method for this.
 //If you don't see a good way to do that, you should stop and look at prior methods.
-public static int[][] copy(int[][] nums){
- return null;//placeholder so it compiles
+
+public static int[] copy(int[] nums) {
+  int[] result = new int [nums.length];
+  for (int i = 0; i < nums.length; i ++) {
+    result[i] = nums[i];
+  }
+  return result; 
 }
 
+
+public static int[][] copy(int[][] nums){
+  int[][] result = new int [nums.length][];
+  for (int i = 0; i < nums.length; i ++) {
+    result[i] = copy(nums[i]);
+  }
+  return result;
+}
+
+  public static String copyTest(int[][] nums){
+  if (Arrays.deepEquals(nums,copy(nums)) {
+    return "Pass";
+  }
+  else {
+    return "Failed, expected " + arrToString(nums) + " but recieved " + arrToString(copy(nums)); 
+  }
 }
