@@ -29,6 +29,11 @@ public class ArrayMethods {
     System.out.println("Test 04: " + replaceNegativeTest(new int[][] {{-1,-2,-3}, {-4,0,2}, {3,-5,-6}}, new int[][] {{1,0,0}, {0,0,2}, {3,0,1}}));
     System.out.println("Test 05: " + replaceNegativeTest(new int[][] {{10,-11,12}, {-13,-14,-15}, {16,-17,18}}, new int[][] {{10,0,12}, {0,1,0}, {16,0,18}}));
     System.out.println("\ncopy Tests: ");
+    System.out.println("Test 01: " + copyTest(new int[][] {{98,95,95,95,95,94,94}, {93,98,93,94,95,95}, {98,99,100,91,99,98}}));
+    System.out.println("Test 02: " + copyTest(new int[][] {{100,99,96,99,99,100}, {99,97,95,99,96,100,98}, {98,98,99,100,97,100,99}}));
+    System.out.println("Test 03: " + copyTest(new int[][] {{1,2,3,4,5,6,7,8}, {-1,-2,-3,-4}, {33,99,22}}));
+    System.out.println("Test 04: " + copyTest(new int[][] {{22,22,22}, {33,33,33}, {45}, {999,101,555,432}}));
+    System.out.println("Test 05: " + copyTest(new int[][] {{1,18,4,9,1,14}, {1,7,15,5,18}, {24,9,12,12}, {12,9,11,5}, {14,5}}));
 
   }
 
