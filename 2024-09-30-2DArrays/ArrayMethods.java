@@ -4,44 +4,32 @@ import java.util.*;
 public class ArrayMethods {
   public static void main (String[] args) {
     System.out.println("arr2DSum Tests: ");
-    int[][] arr = new int[][] {{2, 7}, {3, 6, 1}, {0, 0, 0, 0}};
-    System.out.println("Test 01: " + arr2DSumTest(arr, 0));
-    arr = new int[][] {{1,2,3}, {5,6,7}, {4, 2}};
-    System.out.println("Test 02: " + arr2DSumTest(arr, 1));
-    arr = new int[][] {{11,12}, {13,14,15}, {0,-1,2,32,-33}};
-    System.out.println("Test 03: " + arr2DSumTest(arr, 2));
-    arr = new int[][] {{11,11,11}, {22,22,22}, {33,33,33}};
-    System.out.println("Test 04: " + arr2DSumTest(arr, 3));
-    arr = new int[][] {{-202,-204}, {100, 101, 102, 103}, {0,-1,1,-22,22}};
-    System.out.println("Test 05: " + arr2DSumTest(arr, 4));
-    arr = new int[][] {{}, {}, {}, {}};
-    System.out.println("Test 06: " + arr2DSumTest(arr, 5));
-    System.out.println(" ");
-    System.out.println("arrToString[][] Tests: ");
-    int[][] arr1 = new int[][] {{1,2,3,4,5,6}, {5,30}, {0, -11, 44}};
-    System.out.println("Test 01: " + arrToStringTest(arr1));
-    arr1 = new int[][] {{},{},{},{},{}};
-    System.out.println("Test 02: " + arrToStringTest(arr1));
-    arr1 = new int[][] {{1,2,5,7}, {-4,6,-99,100}};
-    System.out.println("Test 03: " + arrToStringTest(arr1));
-    arr1 = new int[][] {{100,100,100,100,100}, {99,100,99,100,99,100}, {100,98,99,100,99}};
-    System.out.println("Test 04: " + arrToStringTest(arr1));
-    arr1 = new int[][] {{22,222,2222,222}, {10000,9999, 9888}, {0000, 000, 0}};
-    System.out.println("Test 05: " + arrToStringTest(arr1));
-    System.out.println(" ");
-    System.out.println("swapRC Tests: ");
-    int[][] arr2 = new int[][] {{1,2,3}, {4,5,6}};
-    System.out.println("Test 01: " + swapRCTest(arr2, new int[][] {{1,4}, {2,5}, {3,6}}));
-    arr2 = new int[][] {{7,8,9}, {10,11,12}, {13,14,15}};
-    System.out.println("Test 02: " + swapRCTest(arr2, new int[][] {{7,10,13}, {8,11,14}, {9,12,15}}));
-    arr2 = new int[][] {{1}};
-    System.out.println("Test 03: " + swapRCTest(arr2, new int[][] {{1}}));
-    arr2 = new int[][] {{1,2}, {3,4}, {5,6}, {7,8}};
-    System.out.println("Test 04: " + swapRCTest(arr2, new int[][] {{1,3,5,7}, {2,4,6,8}}));
-    arr2 = new int[][] {{10,20,30,40}, {50,60,70,80}};
-    System.out.println("Test 05: " + swapRCTest(arr2, new int[][] {{10,50}, {20,60}, {30,70}, {40,80}}));
-    System.out.println(arrToString(copy(new int[][] {{1,2,3}, {3,4,5}, {5,6,7}, 
-{44}})));
+    System.out.println("Test 01: " + arr2DSumTest(new int[][] {{2, 7}, {3, 6, 1}, {0, 0, 0, 0}}, 0));
+    System.out.println("Test 02: " + arr2DSumTest(new int[][] {{1,2,3}, {5,6,7}, {4, 2}}, 1));
+    System.out.println("Test 03: " + arr2DSumTest(new int[][] {{11,12}, {13,14,15}, {0,-1,2,32,-33}}, 2));
+    System.out.println("Test 04: " + arr2DSumTest(new int[][] {{11,11,11}, {22,22,22}, {33,33,33}}, 3));
+    System.out.println("Test 05: " + arr2DSumTest(new int[][] {{-202,-204}, {100, 101, 102, 103}, {0,-1,1,-22,22}}, 4));
+    System.out.println("Test 06: " + arr2DSumTest(new int[][] {{}, {}, {}, {}}, 5));
+    System.out.println("\narrToString[][] Tests: ");
+    System.out.println("Test 01: " + arrToStringTest(new int[][] {{1,2,3,4,5,6}, {5,30}, {0, -11, 44}}));
+    System.out.println("Test 02: " + arrToStringTest(new int[][] {{},{},{},{},{}}));
+    System.out.println("Test 03: " + arrToStringTest(new int[][] {{1,2,5,7}, {-4,6,-99,100}}));
+    System.out.println("Test 04: " + arrToStringTest(new int[][] {{100,100,100,100,100}, {99,100,99,100,99,100}, {100,98,99,100,99}}));
+    System.out.println("Test 05: " + arrToStringTest(new int[][] {{22,222,2222,222}, {10000,9999, 9888}, {0000, 000, 0}}));
+    System.out.println("\nswapRC Tests: ");
+    System.out.println("Test 01: " + swapRCTest(new int[][] {{1,2,3}, {4,5,6}}, new int[][] {{1,4}, {2,5}, {3,6}}));
+    System.out.println("Test 02: " + swapRCTest(new int[][] {{7,8,9}, {10,11,12}, {13,14,15}}, new int[][] {{7,10,13}, {8,11,14}, {9,12,15}}));
+    System.out.println("Test 03: " + swapRCTest(new int[][] {{1}}, new int[][] {{1}}));
+    System.out.println("Test 04: " + swapRCTest(new int[][] {{1,2}, {3,4}, {5,6}, {7,8}}, new int[][] {{1,3,5,7}, {2,4,6,8}}));
+    System.out.println("Test 05: " + swapRCTest(new int[][] {{10,20,30,40}, {50,60,70,80}}, new int[][] {{10,50}, {20,60}, {30,70}, {40,80}}));
+    System.out.println("\nreplaceNegative Tests: ");
+    System.out.println("Test 01: " + replaceNegativeTest(new int [][] {{1,-2,3}, {-4,5,6}, {7,8,-9}}, new int[][] {{1,0,3}, {0,5,6}, {7,8,1}}));
+    System.out.println("Test 02: " + replaceNegativeTest(new int [][] {{-1,-1,-1}, {-1,-2,-1}, {-1,-1,-1}}, new int [][] {{1,0,0}, {0,1,0}, {0,0,1}}));
+    System.out.println("Test 03: " + replaceNegativeTest(new int[][] {{0,2,-3}, {4,-5,6}, {-7,8,9}}, new int[][] {{0,2,0}, {4,1,6}, {0,8,9}}));
+    System.out.println("Test 04: " + replaceNegativeTest(new int[][] {{-1,-2,-3}, {-4,0,2}, {3,-5,-6}}, new int[][] {{1,0,0}, {0,0,2}, {3,0,1}}));
+    System.out.println("Test 05: " + replaceNegativeTest(new int[][] {{10,-11,12}, {-13,-14,-15}, {16,-17,18}}, new int[][] {{10,0,12}, {0,1,0}, {16,0,18}}));
+    System.out.println("\ncopy Tests: ");
+
   }
 
 //2. Copy your arrToString method from before.
@@ -87,8 +75,7 @@ public class ArrayMethods {
     if (arrToString(ary).equals(Arrays.deepToString(ary))) {
       return "Pass";
     } else {
-      return "Failed, expected " + Arrays.deepToString(ary) + " but recieved " +
-arrToString(ary);
+      return "Failed, expected " + Arrays.deepToString(ary) + " but recieved " + arrToString(ary);
     }
   }
 
@@ -156,9 +143,17 @@ arrToString(ary);
           }
         }
       }
-
     }
+  }
 
+  public static String replaceNegativeTest(int[][] input, int[][] expected) {
+    replaceNegative(input);
+    if (Arrays.deepEquals(input,expected)) {
+      return "Pass";
+    }
+    else {
+      return "Failed, expected " + arrToString(expected) + " but recieved " + arrToString(input);
+    }
   }
 
 
@@ -173,9 +168,8 @@ public static int[] copy(int[] nums) {
   for (int i = 0; i < nums.length; i ++) {
     result[i] = nums[i];
   }
-  return result; 
+  return result;
 }
-
 
 public static int[][] copy(int[][] nums){
   int[][] result = new int [nums.length][];
@@ -185,11 +179,12 @@ public static int[][] copy(int[][] nums){
   return result;
 }
 
-  public static String copyTest(int[][] nums){
-  if (Arrays.deepEquals(nums,copy(nums)) {
-    return "Pass";
-  }
-  else {
-    return "Failed, expected " + arrToString(nums) + " but recieved " + arrToString(copy(nums)); 
+  public static String copyTest(int[][] nums) {
+    if (Arrays.deepEquals(nums,copy(nums))) {
+      return "Pass";
+    }
+    else {
+      return "Failed, expected " + arrToString(nums) + " but recieved " + arrToString(copy(nums));
+    }
   }
 }
