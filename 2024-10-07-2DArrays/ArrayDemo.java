@@ -52,9 +52,18 @@ public class ArrayDemo{
   //2. Calculate the sum of a 2d array
   /*Return the sum of all of the values in the 2D array
    *Use a nested loop instead of a helper method*/
-  public static int arr2DSum(int[][]nums){
-    return 0;
-  }
+   public static int arr2DSum(int[][] nums){
+   //use a nested loop to solve this
+       int sum = 0;
+     for(int i = 0; i < nums.length; i++)
+     {
+       for(int j = 0; j < nums[i].length; j++)
+       {
+         sum += nums[i][j];
+       }
+     }
+     return sum;
+   }
 
   //3. Modify a given 2D array of integer as follows:
   //Replace all the negative values:
