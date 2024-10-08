@@ -11,16 +11,19 @@ public class ArrayDemo{
     //arrToString 1D Test
 
     int[] arr1D = new int[] {1,2,3,4};
-    int[][] arr2D = new int[][] {{1,2,4,6}, {20000,459,103}, {34}, {0,0,0,0}};
-    int[][] arr2Da = new int[][] {{100,200,300}, {300,400,500}};
+    int[][] arr2D = new int[][] {{1,2,4,6}, {-20000,459,-103}, {34}, {0,0,0,0}};
+    int[][] arr2Da = new int[][] {{100,-200,300}, {-300,400,500}};
     System.out.println("\n1D arrToString test");
     System.out.println("Test 01: \nExpected : " + Arrays.toString(arr1D) + "\nRecieved: " + arrToString(arr1D));
     System.out.println("\n2D arrToString test");
     System.out.println("Test 01: \nExpected : " + Arrays.deepToString(arr2D) + "\nRecieved: " + arrToString(arr2D));
     System.out.println("\nTest 02: \nExpected : " + Arrays.deepToString(arr2Da) + "\nRecieved: " + arrToString(arr2Da));
     System.out.println("\ncountZeros2D test");
-    System.out.println("Test 01: \nExpected : " + 4 + "\n Recieved: " + countZeros2D(arr2D));
-    System.out.println("\nTest 02: \nExpected : " + 1800 + "\n Recieved: " + countZeros2D(arr2Da));
+    System.out.println("Test 01: \nExpected : " + 4 + "\nRecieved: " + countZeros2D(arr2D));
+    System.out.println("\nTest 02: \nExpected : " + 0 + "\nRecieved: " + countZeros2D(arr2Da));
+    System.out.println("\narr2DSum test");
+    System.out.println("Test 01: \nExpected : " + -19597 + "\nRecieved: " + arr2DSum(arr2D));
+    System.out.println("\nTest 02: \nExpected : " + 800 + "\nRecieved: " + arr2DSum(arr2Da));
     System.out.println("\nreplaceNegative test");
     System.out.println("Test 01: \nExpected : " + Arrays.deepToString(arr2D) + "\nRecieved: " + arrToString(arr2D));
     System.out.println("\nTest 02: \nExpected : " + Arrays.deepToString(arr2Da) + "\nRecieved: " + arrToString(arr2Da));
@@ -30,10 +33,12 @@ public class ArrayDemo{
     System.out.println("Test 01: \nExpected : " + Arrays.deepToString(arr2D) + "\nRecieved: " + Arrays.deepToString(copy(arr2D)));
     System.out.println("\nTest 02: \nExpected : " + Arrays.deepToString(arr2Da) + "\nRecieved: " + Arrays.deepToString(copy(arr2Da)));
     System.out.println("\nswapRC test");
-    System.out.println("\nTest 01: \nExpected : " + "[[100, 300], [200, 400], [300, 500]]" + "\nRecieved: " + Arrays.deepToString((swapRC(arr2Da))));
+    int[][] arr2Db = new int[][] {{1,2}, {3,4}, {5,6}, {7,8}};
+    System.out.println("Test 01: \nExpected : " + "[[100, -300], [-200, 400], [300, 500]]" + "\nRecieved: " + Arrays.deepToString((swapRC(arr2Da))));
+    System.out.println("\nTest 02: \nExpected : " + "[[1, 3, 5, 7], [2, 4, 6, 8]]" + "\nRecieved: " + Arrays.deepToString((swapRC(arr2Db))));
     System.out.println("\nhtmlTable test");
-    System.out.println("Test 01: \nExpected : " + "<table><tr><td>1</td><td>2</td><td>4</td><td>6</td></tr<tr><td>20000</td><td>459</td><td>103</td></tr<tr><td>34</td></tr<tr><td>0</td><td>0</td><td>0</td><td>0</td></tr</table" + "\nRecieved: " + htmlTable(arr2D));
-    System.out.println("\nTest 02: \nExpected : " + "<table><tr><td>100</td><td>200</td><td>300</td></tr><tr><td>300</td><td>400</td><td>500</td></tr></table>" + "\nRecieved: " + htmlTable(arr2Da));
+    System.out.println("Test 01: \nExpected : " + "<table><tr><td>1</td><td>2</td><td>4</td><td>6</td></tr<tr><td>-20000</td><td>459</td><td>-103</td></tr<tr><td>34</td></tr<tr><td>0</td><td>0</td><td>0</td><td>0</td></tr</table" + "\nRecieved: " + htmlTable(arr2D));
+    System.out.println("\nTest 02: \nExpected : " + "<table><tr><td>100</td><td>-200</td><td>300</td></tr><tr><td>-300</td><td>400</td><td>500</td></tr></table>" + "\nRecieved: " + htmlTable(arr2Da));
 
 
   }
