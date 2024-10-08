@@ -5,11 +5,6 @@ public class ArrayDemo{
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
-
-    //Needed tests: arrToString 1D, arrToString 2D, countZeros2D, arr2DSum, replaceNegative, copy1D, copy2D, swapRC, htmlTable
-
-    //arrToString 1D Test
-
     int[] arr1D = new int[] {1,2,3,4};
     int[][] arr2D = new int[][] {{1,2,4,6}, {-20000,459,-103}, {34}, {0,0,0,0}};
     int[][] arr2Da = new int[][] {{100,-200,300}, {-300,400,500}};
