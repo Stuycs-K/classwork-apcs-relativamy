@@ -6,6 +6,30 @@ public class ArrayDemo{
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
 
+    //Needed tests: arrToString 1D, arrToString 2D, countZeros2D, arr2DSum, replaceNegative, copy1D, copy2D, swapRC, htmlTable
+
+    //arrToString 1D Test
+
+    int[] arr1D = new int[] {1,2,3,4};
+    int[][] arr2D = new int[][] {{1,2,4,6}, {20000,459,103}, {34}, {0,0,0,0}};
+    System.out.println("\n1D arrToString test");
+    System.out.println("\nTest 01: \nExpected : " + Arrays.toString(arr1D) + "\nRecieved: " + arrToString(arr1D));
+    System.out.println("\n2D arrToString test");
+    System.out.println("\nTest 01: \nExpected : " + Arrays.deepToString(arr2D) + "\nRecieved: " + arrToString(arr2D));
+    System.out.println("\ncountZeros2D test");
+    System.out.println("\nTest 01: \nExpected : " + 4 + "\n Recieved: " + countZeros2D(arr2D));
+    System.out.println("\nreplaceNegative test");
+    System.out.println("\nTest 01: \nExpected : " + Arrays.deepToString(arr2D) + "\nRecieved: " + arrToString(arr2D));
+    System.out.println("\ncopy1D test");
+    System.out.println("\nTest 01: \nExpected : " + Arrays.toString(arr1D) + "\nRecieved: " + Arrays.toString(copy(arr1D)));
+    System.out.println("\ncopy2D test");
+    System.out.println("\nTest 01: \nExpected : " + Arrays.deepToString(arr2D) + "\nRecieved: " + copy(arr2D));
+    System.out.println("\swapRC test");
+    System.out.println("\nTest 01: \nExpected : " + Arrays.deepToString(arr2D) + "\nRecieved: " + arrToString((swapRC(arr2D))));
+    System.out.println("\nhtmlTable test");
+    System.out.println("\nTest 01: \nExpected : " + "<table><tr><td>1</td><td>2</td><td>4</td><td>6</td></tr><tr><td>20000</td><td>459</td><td>103</td></tr><tr><td>34</td></tr><tr><td>0</td><td>0</td><td>0</td><td>0</td></tr></table>" + "\n Recieved: " + htmlTable(arr2D));
+
+
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -17,6 +41,7 @@ public class ArrayDemo{
          result += ", ";
        }
      }
+     result += "]";
      return result;
   }
 
