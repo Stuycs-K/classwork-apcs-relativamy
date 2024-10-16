@@ -35,7 +35,7 @@ public class Demo {
     // equilateral triangle points
     Point t1 = new Point(0,0);
     Point t2 = new Point(1,0);
-    Point t3 = new Point(0.5,Math.sqrt(3));
+    Point t3 = new Point(0.5,Math.sqrt(3) / 2);
 
     // equilateral triangle side length tests
     System.out.println( distance(t1,t2));
