@@ -12,7 +12,10 @@ public class ReadFile {
       Scanner input = new Scanner(file);
       //CODE THAT SCANS THE FILE.
       while(input.hasNextLine()){
-        System.out.println(input.nextLine());
+        String lin = input.nextLine();
+        if (lin.contains("{")) {
+          System.out.println(lin);
+        }
       }
       input.close();//releases the file from your program
 
