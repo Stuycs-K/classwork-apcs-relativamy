@@ -4,7 +4,12 @@ import java.util.Scanner;
 
 public class TriangleTester {
   public static void main (String[] args) {
-    System.out.println("Number of valid triangles: "+countTrianglesA("inputTri.txt"));
+    System.out.println("[A] Number of valid triangles: "+countTrianglesA("inputTri.txt"));
+    System.out.println("[B] Number of valid triangles: "+countTrianglesB("inputTri.txt"));
+  }
+
+  private static boolean isValidTriangle(int a, int b, int c){
+    return (a + b > c) && (a + c > b) && (b + c > a);
   }
 
   public static int countTrianglesA(String filename) {
@@ -21,7 +26,7 @@ public class TriangleTester {
           int s2 = triangle.nextInt();
           int s3 = triangle.nextInt();
           //if the sum of any two side lenghts is greater than the third, then it is a triangle
-          if ((s1 + s2 > s3) && (s1 + s3 > s2) && (s2 + s3 > s1)) {
+          if (isValidTriangle(s1,s2,s3)) {
             count ++;
           }
         }
@@ -35,5 +40,27 @@ public class TriangleTester {
     return count;
   }
 
-
+  public static int countTrianglesB(String filename) {
+    int count = 0;
+    try (Scanner scanner = new Scanner(new File(filename))) {
+      while (scanner.hasNextLine()) {
+        int [][] triangles = new int[3][3];
+        for (int i=0; i<3; i++){
+          Scanner triangle = new Scanner(scanner.nextLine());
+          for (int j=0; j<3; j++){
+            triangles[i][j] = triangle.nextInt();
+          }
+        }
+        for (int i=0; i<3; i++){
+          if (isValidTriangle(triangles[0][i], triangles[1][i], triangles[2][i])){
+            count++;
+          }
+        }
+      }
+      return count;
+    }
+    catch (FileNotFoundException e) {
+      return 0;
+    }
+  }
 }
