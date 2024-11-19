@@ -32,6 +32,9 @@ public class day1 {
         dir --;
       }
       int steps = Integer.parseInt(data[i].substring(1));
+      dir = (dir + 4) % 4;
+      x = offset[dir][0] * steps;
+      y = offset[dir][1] * steps;
     }
     return 0;
   }
