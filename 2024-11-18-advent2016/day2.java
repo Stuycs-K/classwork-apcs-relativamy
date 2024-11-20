@@ -27,8 +27,29 @@ public class day2 {
       return new String[0];
     }
   }
-
   public static int solve (String[] data) {
+    int[][] keys = {{1,2,3}, {4,5,6}, {7,8,9}};
+    int[] code = new int[data.length())];
+    for (int i = 0; i < data.length(); i++) {
+      int input = 5;
+      String line = data[i];
+      String[] key = new String[line.length()];
+      for (int i = 0; i < line.length(); i ++) {
+        key[i] = line.charAt(i);
+      }
+      for (int i = 0; i < key.length; i++) {
+        if (key[i] == 'U') {
+          if (!(input < 3)) {
+            keys -= 3;
+          }
+        }
+        if (key[i] == 'L') {
+          if (!(input < 3)) {
+            keys -= 3;
+          }
+        }
+      }
+    }
     int x=0,y=0,dir=0;
     int[][] offset = {{0,1},{1,0},{0,-1},{-1,0}};
     for (int i = 0; i < data.length; i++) {
