@@ -24,6 +24,8 @@ public class day1 {
   public static int solve (String[] data) {
     int x=0,y=0,dir=0;
     int[][] offset = {{0,1},{1,0},{0,-1},{-1,0}};
+    ArrayList<String> visited = new ArrayList<>();
+    visited.add("0,0");
     for (int i = 0; i < data.length; i++) {
       if (data[i].charAt(0) == 'R') {
         dir ++;
@@ -33,9 +35,16 @@ public class day1 {
       }
       int steps = Integer.parseInt(data[i].substring(1));
       dir = (dir + 4) % 4;
-      x = offset[dir][0] * steps;
-      y = offset[dir][1] * steps;
+      for (int j = 0; j < steps; j ++) {
+        x += offset[dir][0];
+        y += offset[dir][1];
+        String currentPos = x + "," + y;
+        if (visited.contains(currentPos)) {
+          return x+y;
+        }
+        visited.add(currentPos);
+      }
     }
-    return 0;
+    return x+y;
   }
 }

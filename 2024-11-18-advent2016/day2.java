@@ -29,7 +29,7 @@ public class day2 {
   }
   public static int solve (String[] data) {
     int[][] keys = {{1,2,3}, {4,5,6}, {7,8,9}};
-    int[] code = new int[data.length())];
+    int[] code = new int[data.length()];
     for (int i = 0; i < data.length(); i++) {
       int input = 5;
       String line = data[i];
