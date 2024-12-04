@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class ColorDemo {
   public static final String CLEAR_SCREEN =  "\u001b[2J";
   public static final String HIDE_CURSOR =  "\u001b[?25l";
@@ -16,7 +18,25 @@ public class ColorDemo {
   public static void go(int r,int c){
   System.out.print("\u001b[" + r + ";" + c + "f");
   }
+
   public static void main(String[] args) {
-    color(53,45,3);
+    System.out.print(CLEAR_SCREEN + HIDE_CURSOR);
+    color(RED, BLACK);
+    System.out.println("red text on a black background.");
+    color(RED, BLACK, 1);
+    System.out.println("bold red text on a black background.");
+    System.out.print("\u001b[0m");
+    System.out.println("normal text");
+    go(10, 5);
+    color(RED, BLACK);
+    System.out.print("moved text");
+    System.out.print(SHOW_CURSOR);
   }
+
+  public Static string randomRGB() {
+    Random random = new Random();
+    int red = random.nextInt(256);
+    int green = random.nextInt(256);
+    int blue = random.nextInt(256);
+    return "\u001b[38;2;" + red + ";" + green + ";" + blue + "m"; 
 }
