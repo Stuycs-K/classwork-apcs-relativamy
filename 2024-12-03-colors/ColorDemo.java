@@ -19,8 +19,20 @@ public class ColorDemo {
     System.out.print("\u001b[" + r + ";" + c + "f");
   }
 
+  public static void hideCursor() {
+    System.out.print(HIDE_CURSOR);
+  } 
+
+  public static void showCursor() {
+    System.out.println(SHOW_CURSOR);
+  }
+
+  public static void clearLine() {
+    System.out.println("\u001b[2K");
+  }
+
   public static void main(String[] args) {
-    System.out.print(CLEAR_SCREEN + HIDE_CURSOR);
+   /* System.out.print(CLEAR_SCREEN + HIDE_CURSOR);
     color(RED, BLACK);
     System.out.println("red text on a black background.");
     color(RED, BLACK, 1);
@@ -29,8 +41,17 @@ public class ColorDemo {
     System.out.println("normal text");
     go(10, 5);
     color(RED, BLACK);
-    System.out.print("moved text");
+    System.out.print("moved text"); */
+    go(5,10);
     loopRGB(20);
+    System.out.println("test 01");
+    go (7, 15);
+    loopRGB(20);
+    System.out.println("test 02");
+    go (6, 15);
+    System.out.println("moved up one line");
+    clearLine();
+    showCursor();
     System.out.print(SHOW_CURSOR);
   }
 
