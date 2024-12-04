@@ -16,7 +16,7 @@ public class ColorDemo {
   }
 
   public static void go(int r,int c){
-  System.out.print("\u001b[" + r + ";" + c + "f");
+    System.out.print("\u001b[" + r + ";" + c + "f");
   }
 
   public static void main(String[] args) {
@@ -30,13 +30,23 @@ public class ColorDemo {
     go(10, 5);
     color(RED, BLACK);
     System.out.print("moved text");
+    loopRGB(20);
     System.out.print(SHOW_CURSOR);
   }
 
-  public Static string randomRGB() {
+  public static String randomRGB() {
     Random random = new Random();
     int red = random.nextInt(256);
     int green = random.nextInt(256);
     int blue = random.nextInt(256);
-    return "\u001b[38;2;" + red + ";" + green + ";" + blue + "m"; 
+    return "\u001b[38;2;" + red + ";" + green + ";" + blue + "m";
+  }
+
+  public static void loopRGB(int n) {
+    for (int i = 0; i < n; i ++) {
+     System.out.print(randomRGB());
+     System.out.print("changed color");
+    }
+  }
 }
+
