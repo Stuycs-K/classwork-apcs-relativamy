@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class ColorDemo {
   public static final String CLEAR_SCREEN =  "\u001b[2J";
   public static final String HIDE_CURSOR =  "\u001b[?25l";
@@ -14,9 +16,58 @@ public class ColorDemo {
   }
 
   public static void go(int r,int c){
-  System.out.print("\u001b[" + r + ";" + c + "f");
+    System.out.print("\u001b[" + r + ";" + c + "f");
   }
+
+  public static void hideCursor() {
+    System.out.print(HIDE_CURSOR);
+  } 
+
+  public static void showCursor() {
+    System.out.println(SHOW_CURSOR);
+  }
+
+  public static void clearLine() {
+    System.out.println("\u001b[2K");
+  }
+
   public static void main(String[] args) {
-    color(53,45,3);
+   /* System.out.print(CLEAR_SCREEN + HIDE_CURSOR);
+    color(RED, BLACK);
+    System.out.println("red text on a black background.");
+    color(RED, BLACK, 1);
+    System.out.println("bold red text on a black background.");
+    System.out.print("\u001b[0m");
+    System.out.println("normal text");
+    go(10, 5);
+    color(RED, BLACK);
+    System.out.print("moved text"); */
+    go(5,10);
+    loopRGB(20);
+    System.out.println("test 01");
+    go (7, 15);
+    loopRGB(20);
+    System.out.println("test 02");
+    go (6, 15);
+    System.out.println("moved up one line");
+    clearLine();
+    showCursor();
+    System.out.print(SHOW_CURSOR);
+  }
+
+  public static String randomRGB() {
+    Random random = new Random();
+    int red = random.nextInt(256);
+    int green = random.nextInt(256);
+    int blue = random.nextInt(256);
+    return "\u001b[38;2;" + red + ";" + green + ";" + blue + "m";
+  }
+
+  public static void loopRGB(int n) {
+    for (int i = 0; i < n; i ++) {
+     System.out.print(randomRGB());
+     System.out.print("changed color");
+    }
   }
 }
+
