@@ -1,6 +1,7 @@
 public class Driver {
   public static void main (String[] args) {
     border(80,30);
+    draw();
   }
   public static void border (int width, int height) {
     System.out.print(Text.CLEAR_SCREEN);
@@ -22,5 +23,25 @@ public class Driver {
     }
     Text.go(height+1,1);
     System.out.print(Text.RESET);
+  }
+  public static void draw() {
+    int[] nums = new int[3];
+    for (int i = 0; i < 3; i ++) {
+      nums[i] = (int)(Math.random() * 100);
+    }
+    for (int num: nums) {
+      if (num < 25) {
+        Text.color(Text.RED, Text.background(Text.BLACK), Text.BRIGHT);
+        System.out.print(num + " ");
+      }
+      else if (num > 75) {
+        Text.color(Text.GREEN, Text.background(Text.BLACK), Text.BRIGHT);
+        System.out.print(num + " ");
+      }
+      else {
+        Text.color(Text.WHITE);
+        System.out.print(num + " ");
+      }
+    }
   }
 }
