@@ -1,6 +1,6 @@
-import java.util.Random;
-public abstract class Wizard extends Adventurer {
+public class Wizard extends Adventurer {
   private int special = 0;
+  private String specialName = "mana";
   public Wizard (String name) {
     super(name);
   }
@@ -8,7 +8,7 @@ public abstract class Wizard extends Adventurer {
     super(name, hp);
   }
   public String getSpecialName() {
-    return "mana";
+    return specialName;
   }
   public int getSpecial() {
     return special;
@@ -21,11 +21,15 @@ public abstract class Wizard extends Adventurer {
   }
   public String attack (Adventurer other) {
     other.applyDamage(10);
-    return "damaged " + other.getName() + " by 10 hp";
+    return this.getName() + " damaged " + other.getName() + " by 10 hp";
   }
   public String support (Adventurer other) {
     other.setHP(other.getHP() + 10);
-    return "supported " + other.getName() + " by 10 hp";
+    return this.getName() + "supported " + other.getName() + " by 10 hp";
+  }
+  public String support() {
+    this.setHP(this.getHP() + 10);
+    return this.getName() + "supported itself 10 hp";
   }
   public String specialAttack (Adventurer other) {
     other.setSpecial(other.getSpecial() - 15);
