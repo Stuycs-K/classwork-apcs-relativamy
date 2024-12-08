@@ -25,15 +25,15 @@ public class Wizard extends Adventurer {
   }
   public String support (Adventurer other) {
     other.setHP(other.getHP() + 10);
-    return this.getName() + "supported " + other.getName() + " by 10 hp";
+    return this.getName() + " supported " + other.getName() + " by 10 hp";
   }
   public String support() {
     this.setHP(this.getHP() + 10);
-    return this.getName() + "supported itself 10 hp";
+    return this.getName() + " supported itself 10 hp";
   }
   public String specialAttack (Adventurer other) {
     other.setSpecial(other.getSpecial() - 15);
     other.applyDamage(20);
-    return "special attack! damaged " + other.getName() + " -15 special and -20 HP";
+    return this.getName() + " special attack! damaged " + other.getName() + " -15 special and -20 HP";
   }
 }
