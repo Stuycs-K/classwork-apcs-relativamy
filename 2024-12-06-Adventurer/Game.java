@@ -14,24 +14,38 @@ public class Game {
       System.out.println("Enemy: " + enemy.getName() +
         ", " + enemy.getHP() + "/" + enemy.getmaxHP() + " HP" +
         ", "  + enemy.getSpecial() + "/" + enemy.getSpecialMax() + " " + enemy.getSpecialName());
-    while (true) {
-      System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
-      String input = userInput.nextLine();
-      if (input.equals("a")) {
-        System.out.println(player.attack(enemy));
+    boolean flag = true;
+    while (flag) {
+      flag = check(player,enemy);
+      if (flag && enemy.getHP() > 0) {
+        System.out.print("Opponent is still alive!");
+        flag = check(enemy,player);
       }
-      else if (input.equals("sp")) {
-        System.out.println(player.specialAttack(enemy));
-      }
-      else if (input.equals("su")) {
-        System.out.println(player.support());
-      }
-      else if (input.equals("quit")) {
+      if (enemy.getHP() < 0 || player.getHP() < 0) {
+        System.out.println("GAME OVER!");
         return;
       }
-      else {
-        System.out.println("Incorrect input. Type: (a)ttack / (sp)ecial / (su)pport / quit");
-      }
     }
+  }
+  public static boolean check (Adventurer p1, Adventurer p2) {
+    Scanner userInput = new Scanner(System.in);
+    System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
+    String input = userInput.nextLine();
+    if (input.equals("a")) {
+      System.out.println(p1.attack(p2));
+    }
+    else if (input.equals("sp")) {
+      System.out.println(p1.specialAttack(p2));
+    }
+    else if (input.equals("su")) {
+      System.out.println(p1.support());
+    }
+    else if (input.equals("quit")) {
+      return false;
+    }
+    else {
+      System.out.println("Incorrect input. Type: (a)ttack / (sp)ecial / (su)pport / quit");
+    }
+    return true;
   }
 }
